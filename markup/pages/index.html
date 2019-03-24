@@ -1,0 +1,77 @@
+<!doctype html>
+<html class="no-js" lang="ru">
+<head>
+    {{> head/head head.defaults}}
+</head>
+<body class="page" style="visibility: hidden;opacity: 0;">
+    %=symbols=%
+
+    {{> header/header}}
+
+    <div class="index-first">
+        <div class="index-first-leaf scene">
+            <img src="%=static=%img/content/leaf.png" data-depth="-2" alt="">
+        </div>
+        <div class="index-first-leaf-2 scene">
+            <img src="%=static=%img/content/leaf-2.png" data-depth="3" alt="">
+        </div>
+        <div class="index-first__bg parallax" id="slider" data-type="background" data-speed="-2" style="background-image: url(%=static=%img/content/first-1.jpg)">
+        </div>
+        <div class="wrapper">
+            <div class="index-first__content">
+                <div class="m-title  wow fadeIn">ЖК «Дом на бульваре» Владивосток: сочетание мегаполиса и гармонии</div>
+                <div class="m-button index-first__button wow fadeIn">Смотреть планировки</div>
+            </div>
+        </div>
+    </div>
+
+    <div class="m-button callPopup" data-popupBlock="popup-block">popup-block</div>
+
+    {{> advant/advant}}
+
+    {{> about/about}}
+
+    {{> video/video}}
+
+    {{> forms/callback}}
+
+    {{> builders/builders}}
+
+    {{> how-sale/how-sale}}
+
+    {{> hard/hard}}
+
+    {{> forms/query}}
+
+    {{> calc/calc}}
+
+    <div class="section np">
+        {{> about-build/about-build}}
+    </div>
+
+
+    {{> quality/quality}}
+
+    <div class="section np">
+        {{> progress/progress}}
+    </div>
+
+    <div class="section">
+        {{> news/news}}
+    </div>
+
+    <div class="section np">
+        {{> common/common}}
+    </div>
+
+    <div class="section np">
+        {{> forms/query-2}}
+    </div>
+
+
+    
+    {{> footer/footer}}
+
+    
+</body>
+</html>

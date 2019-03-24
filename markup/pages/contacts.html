@@ -1,0 +1,94 @@
+<!doctype html>
+<html class="no-js" lang="ru">
+<head>
+    {{> head/head head.defaults}}
+</head>
+<body class="page" style="visibility: hidden;opacity: 0;">
+    %=symbols=%
+
+    {{> header/header}}
+
+    <div class="first">
+        <div class="first-leaf scene">
+            <img src="%=static=%img/content/leaf.png" data-depth="-2" alt="">
+        </div>
+        <div class="first__bg parallax" id="slider" data-type="background" data-speed="-2" style="background-image: url(%=static=%img/content/flex-bg.jpg)">
+        </div>
+        <div class="wrapper">
+            <div class="first__content">
+                {{> bread/bread}}
+                <div class="m-title wow fadeIn">Как купить</div>
+            </div>
+        </div>
+    </div>
+
+    
+
+    <div class="section">
+        <div class="wrapper">
+            <div class="map">
+                <div class="map__left">
+                    <div class="map__item">
+                        <div class="map__img">
+                            {{Icon iconName="place"}}
+                        </div>
+                        <span>Головной офис продаж</span>
+                        <b>г.Владивосток, ул. Ватутина 4В, секция 5, офис 9</b>
+                    </div>
+                    <div class="map__item">
+                        <div class="map__img">
+                            {{Icon iconName="place"}}
+                        </div>
+                        <span>Головной офис продаж</span>
+                        <b>г.Владивосток, ул. Ватутина 4В, секция 5, офис 9</b>
+                    </div>
+                    <div class="map__item">
+                        <div class="map__img">
+                            {{Icon iconName="map-phone"}}
+                        </div>
+                        <a href="tel:84232025009">
+                            <b>8 (423) 202-50-09</b>
+                        </a>
+                    </div>
+                    <div class="map__item">
+                        <div class="map__img">
+                            {{Icon iconName="mail"}}
+                        </div>
+                        <a href="mailto:info@fregat2.ru">
+                            <b>info@fregat2.ru</b>
+                        </a>
+                    </div>
+                    <div class="map__item">
+                        <div class="map__img">
+                            {{Icon iconName="time"}}
+                        </div>
+                        <table>
+                            <tr>
+                                <td>Пн-Чт:</td>
+                                <td>09:00 - 20:00</td>
+                            </tr>
+                            <tr>
+                                <td>Пт:</td>
+                                <td>09.00 - 19.30</td>
+                            </tr>
+                        </table>
+                    </div>
+                </div>
+
+                <div class="map__right">
+                        {{> map/map}}
+                </div>
+                
+            </div>
+        </div>
+    </div>
+
+    {{> forms/query-2}}
+
+    
+    {{> footer/footer}}
+
+    
+    
+</body>
+</html>

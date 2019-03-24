@@ -1,0 +1,88 @@
+<div class="calc section">
+    <div class="wrapper">
+        <div class="calc__container">
+            <div class="calc__top">
+                <div class="m-title-1 mb15">Калькулятор ипотеки</div>
+            </div>
+            <div class="calc__content">
+                <div class="calc__left">
+
+                    <div class="m-text-18-m mb10" >Стоимость объекта недвижимости</div>
+                    <div class="range-container calc-price-container">
+                        <div class="range-output">
+                            <div class=" output-right m-number calc-price"></div>
+                        </div>
+                        
+                        <div id="price" class="m-range-single" data-min="1800000" data-max="10000000" data-step="50000"></div>
+                    </div>  
+
+                    <div class="m-text-18-m mb10">Процентная ставка в год</div>
+                    <div class="range-container calc-percent-year-container">
+                        <div class="range-output">
+                            <div class=" output-right m-number calc-percent-year">20</div>
+                        </div>
+                        
+                        <div id="percent" class="m-range-single" 
+                        data-min="1" data-max="20" data-step="1"></div>
+                    </div>  
+
+                    <div class="m-text-18-m mb10">Первоначальный взнос</div>
+                    <div class="range-container calc-vznos">
+                        <div class="range-output">
+                            <div class=" output-left m-number calc-vznos-result">5000000</div>
+                            <div class="output-right calc-vznos-prec">50</div>
+                        </div>
+                        <div id="vznos" class="m-range-single" data-min="1" data-max="50" data-step="1"></div>
+
+                    </div>
+
+                    <div class="m-text-18-m mb10">Срок кредита</div>
+                    <div class="range-container ">
+                        <div class="range-output">
+                            <div class="output-right m-number calc-time">1</div>
+                        </div>
+                        
+                        <div id="srok" class="m-range-single" data-min="1" data-max="50" data-step="1"></div>
+                    </div>  
+
+                </div>
+                <div class="calc__right">
+                    <div class="calc__top mb30">
+                        <div class="calc__item">
+                            <div class="calc__text m-text-18-m" >Ежемесячный платеж</div>
+                            <div class="calc__result  gradient-text calc-result-month">
+                                <span>6 000 000</span> руб.
+                            </div>
+                        </div>
+                        <div class="calc__item">
+                            <div class="calc__text m-text-18-m" >сумма кредита </div>
+                            <div class="calc__result gradient-text calc-credit-result">
+                                <span>6 000 000</span> руб.
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="calc__form-container">
+                        <form action="#" class="back-block calc-form calc__form">
+                            <div class="m-title-1 mb20">
+                                    Рассчитать ипотеку
+                            </div>
+                            <div class="callback__desc">Удобный способ получить жилье в жилом комплексе «Дом на бульваре» сразу, не откладывая. 
+                                    Чтобы заранее рассчитать свои силы, нужно знать условия ипотеки. Уверены, что мы вам в этом поможем.</div>
+            
+                            <div class="callback__fields">
+                                <input type="text" class="m-field mr30" name="name" placeholder="Ваше имя" autocomplete="off">
+                                <input type="text" class="m-field phone-mask mr30" name="phone" placeholder="Ваш телефон" autocomplete="off">
+                                <button class="m-button">Отправить</button>
+                            </div>
+            
+                            <i class="mt25">Оставляя свои данные вы даете согласие на обработку персональных данных</i>
+                        </form>
+                    </div>
+
+                    
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

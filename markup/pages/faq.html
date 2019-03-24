@@ -1,0 +1,93 @@
+<!doctype html>
+<html class="no-js" lang="ru">
+<head>
+    {{> head/head head.defaults}}
+</head>
+<body class="page" style="visibility: hidden;opacity: 0;">
+    %=symbols=%
+
+    {{> header/header}}
+
+    <div class="first">
+        <div class="first-leaf scene">
+            <img src="%=static=%img/content/leaf.png" data-depth="-2" alt="">
+        </div>
+        <div class="first__bg parallax" id="slider" data-type="background" data-speed="-2" style="background-image: url(%=static=%img/content/flex-bg.jpg)">
+        </div>
+        <div class="wrapper">
+            <div class="first__content">
+                {{> bread/bread}}
+                <div class="m-title wow fadeIn">Вопрос-ответ</div>
+            </div>
+        </div>
+    </div>
+    
+    <div class="section pt wrapper">
+        <div class="container mt60">
+            <div class="content">
+                <ul class="collapsible">
+
+                    <li>
+                        <div class="collapsible-header">
+                            <div class="collapsible__left">
+                                <div class="collapsible__number">
+                                    01    
+                                </div>
+                                
+                                <span>Какие гарантии может предоставить ваша компания?</span>
+                                </div>
+                            <div class="buttons__button collapsible__button">
+                                {{Icon iconName="arrow-grad"}}
+                                {{Icon iconName="arrow-white"}}
+                            </div>
+                        </div>
+                        <div class="collapsible-body html active">
+                            <div class="collapsible-body-content html">
+                                <p>В данный момент первый дом ЖК "Фрегат 2" находится в стадии получения Разрешения на ввод в эксплуатацию.</p>
+                                <p>Чтобы максимально упростить процесс выдачи, предлагаем вам ознакомиться с последовательностью действий: По этой ссылке Вы найдете список квартир, по которым прошла 100% оплата за квартиру, таким образом, сразу же после получения Разрешения на ввод, мы готовы подписывать Акт приема-передачи квартир из этого списка.</p>
+                            </div>
+                        </div>
+                    </li>
+
+                    <li>
+                        <div class="collapsible-header">
+                            <div class="collapsible__left">
+                                <div class="collapsible__number">
+                                    02   
+                                </div>
+                                <span>
+                                    Какие нужны условия для того, чтобы получить право на имущественный вычет?
+                                </span>
+                                </div>
+                            <div class="buttons__button collapsible__button">
+                                {{Icon iconName="arrow-grad"}}
+                                {{Icon iconName="arrow-white"}}
+                            </div>
+                        </div>
+                        <div class="collapsible-body html">
+                            <div class="collapsible-body-content html">
+                                <p>В данный момент первый дом ЖК "Фрегат 2" находится в стадии получения Разрешения на ввод в эксплуатацию.</p>
+                                <p>Чтобы максимально упростить процесс выдачи, предлагаем вам ознакомиться с последовательностью действий: По этой ссылке Вы найдете список квартир, по которым прошла 100% оплата за квартиру, таким образом, сразу же после получения Разрешения на ввод, мы готовы подписывать Акт приема-передачи квартир из этого списка.</p>
+                            </div>
+                        </div>
+                    </li>
+
+                </ul>
+            </div>
+            <div class="sidebar">
+                <div class="sidebar__container">
+                    {{> sidebar/social}}
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+
+    
+    {{> footer/footer}}
+
+    
+    
+</body>
+</html>

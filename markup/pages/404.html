@@ -1,0 +1,50 @@
+<!doctype html>
+<html class="no-js" lang="ru">
+<head>
+    {{> head/head head.defaults}}
+</head>
+<body class="page" style="visibility: hidden;opacity: 0;">
+    %=symbols=%
+
+    {{> header/header}}
+
+    <div class="first">
+        <div class="first-leaf scene">
+            <img src="%=static=%img/content/leaf.png" data-depth="-2" alt="">
+        </div>
+        <div class="first__bg parallax" id="slider" data-type="background" data-speed="-2" style="background-image: url(%=static=%img/content/flex-bg.jpg)">
+        </div>
+        <div class="wrapper">
+            <div class="first__content">
+                {{> bread/bread}}
+                <div class="m-title wow fadeIn">Ошибка 404</div>
+            </div>
+        </div>
+    </div>
+
+    <div class="section pt">
+        <div class="mistake">
+            <div class="wrapper">
+                <div class="mistake__content">
+                    <div class="mistake__404">
+                        404
+                    </div>
+                    <div class="mistake__title m-title-1">Извините, страница не найдена</div>
+                    <div class="mistake__desc m-text-18-b">Страница не найдена, попробуйте еще раз или проверьте ссылку</div>
+                    <a href="index.html" class="m-button">На главную</a>
+                </div>
+                <div class="mistake__img">
+                    <img src="%=static=%img/content/common.jpg" alt="">
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    
+    {{> footer/footer}}
+
+    
+    
+</body>
+</html>

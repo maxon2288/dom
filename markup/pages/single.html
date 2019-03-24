@@ -1,0 +1,88 @@
+<!doctype html>
+<html class="no-js" lang="ru">
+<head>
+    {{> head/head head.defaults}}
+</head>
+<body class="page" style="visibility: hidden;opacity: 0;">
+    %=symbols=%
+
+    {{> header/header}}
+
+    <div class="first">
+        <div class="first-leaf scene">
+            <img src="%=static=%img/content/leaf.png" data-depth="-2" alt="">
+        </div>
+        <div class="first__bg parallax" id="slider" data-type="background" data-speed="-2" style="background-image: url(%=static=%img/content/flex-bg.jpg)">
+        </div>
+        <div class="wrapper">
+            <div class="first__content">
+                {{> bread/bread}}
+                <div class="m-title wow fadeIn">Новости</div>
+            </div>
+        </div>
+    </div>
+    
+    <div class="wrapper">
+        <div class="back">
+            <div class="buttons">
+                <div class="buttons__button buttons__prev active">
+                    {{Icon iconName="arrow-grad"}}
+                    {{Icon iconName="arrow-white"}}
+                </div>
+            </div>
+            <div class="back__text">Назад</div>
+        </div>
+    </div>
+    
+    <div class="section pb">
+        <div class="wrapper">
+            <div class="container">
+                <div class="content">
+                    
+
+                    <div class="article-content">
+                        <div class="html">
+                            <figure>
+                                <img src="%=static=%img/content/img-1.jpg" alt="">
+                            </figure>
+
+                            <h2>Уважение многолетней работой в этой области</h2>
+                            <p>В данный момент первый дом ЖК "Фрегат 2" находится в стадии получения Разрешения на ввод в эксплуатацию. Мы предпринимаем все усилия для скорейшей выдачи ключей от квартир. Чтобы максимально упростить процесс выдачи</p>
+                            <h4>Предлагаем вам ознакомиться с последовательностью действий:</h4>
+
+                            <ul>
+                                <li>На осмотре квартиры перед подписанием с Вами будут представители 
+                                        Генподрядчика и Технического надзора</li>
+                                <li>Запись на осмотр квартиры будет осуществляться по номеру телефона, о котором мы сообщим дополнительно</li>
+                                <li>Тем, кто планирует осмотреть помещение перед подписанием Акта према-передачи о нашим расчетам, мы можем</li>
+                            </ul>
+
+                            <p>В данный момент первый дом ЖК "Фрегат 2" находится в стадии получения Разрешения на ввод в эксплуатацию. Мы предпринимаем все усилия для скорейшей выдачи ключей от квартир. </p>
+
+
+                            <p>Чтобы максимально упростить процесс выдачи, предлагаем вам ознакомиться с последовательностью действий: По этой ссылке https://goo.gl/ED7dzB Вы найдете список квартир, по которым прошла 100% оплата за квартиру, таким образом, сразу же после получения Разрешения на ввод, мы готовы подписывать Акт приема-передачи квартир из этого списка.</p>
+
+
+                            <p>В случае, если вашей квартиры нет в списке – это означает, что она не оплачена полностью или есть какие-то вопросы. Необходимо выяснить, было ли увеличение площади после замеров БТИ по телефону: 8-984-153-17-98 (Людмила Ильченко). При изменении площади необходимо также подписать Дополнительное соглашение</p>
+
+                        </div>
+                    </div>
+
+                    {{> pag/pag-news}}
+                    
+                </div>
+                <div class="sidebar">
+                    <div class="sidebar__container">
+                        {{> sidebar/social}}
+                        {{> sidebar/subscribe}}
+                        {{> sidebar/news}}
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    {{> footer/footer}}
+    
+</body>
+</html>

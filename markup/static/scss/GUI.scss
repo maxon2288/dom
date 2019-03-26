@@ -7,11 +7,19 @@
     line-height: normal;
     color: $text3;
     font-size: 64px;
+    @media screen and (max-width: 1200px) {
+        font-size: 40px;
+    }
+    @media screen and (max-width: 425px) {
+        font-size: 30px;
+    }
+    
 }
 .m-desc {
     font-size: 16px;
     font-weight: 500;
     color: #434343;
+    
 }
 
 ::selection {
@@ -19,19 +27,6 @@
     color: white;
 }
   
-  ::-webkit-scrollbar {
-    width: 10px;
-  }
-  
-  ::-webkit-scrollbar-thumb {
-    background-image: linear-gradient(to bottom,  $green 0%, #bae2a9 100%); 
-    cursor: pointer;
-    border-radius: 2px;
-    width: 10px;
-  }
-  ::-webkit-scrollbar-track {
-      width: 10px;
-  }
   
 img {
     user-select: none;
@@ -41,16 +36,31 @@ img {
     font-weight: bold !important;
     font-size: 36px !important;
     color: #1D3961 !important;
+    @media screen and (max-width: 1200px) {
+        font-size: 30px !important;
+    }
+    @media screen and (max-width: 425px) {
+        font-size: 26px !important;
+    }
 }
 .m-title-4, h4 {
     font-weight: bold !important;
     font-size: 20px !important;
     color: #1D3961 !important;
+    @media screen and (max-width: 1200px) {
+        font-size: 18px !important;
+    }
 }
 .m-title-3, h3 {
     font-weight: bold;
     font-size: 24px;
     color: #1D3961;
+    @media screen and (max-width: 1200px) {
+        font-size: 22px !important;
+    }
+    @media screen and (max-width: 425px) {
+        font-size: 20px !important;
+    }
 }
 .cont-tab {
     display: none !important;  
@@ -99,6 +109,9 @@ img {
         font-weight: 400 !important;
         font-size: 18px;
         color: #68707A;
+        @media screen and (max-width: 425px) {
+            font-size: 16px;
+        }
     }
     p  {
         color: #68707A;
@@ -107,6 +120,9 @@ img {
     }
     b {
         font-weight: bold;
+        @media screen and (max-width: 425px) {
+            font-size: 16px;
+        }
     }
     
     a {
@@ -307,11 +323,13 @@ img {
     display: flex;
     box-shadow: 0px 4px 25px rgba(157, 188, 233, 0.3);
     min-width: 270px;
+    border: 2px solid white;
+    transition: 0.3s;
     &.error {
-        border-color: #db3b3b !important;
+        border-color: rgb(239, 111, 111) !important;
     }
     &.valid {
-        border-color: #68a852 !important;
+        border-color: $green !important;
     }
     &::placeholder {
         transition: 0.3s;
@@ -359,21 +377,33 @@ img {
         font-size: 18px;
         color: $text2;
         font-weight: 700;
+        @media screen and (max-width: 425px) {
+            font-size: 16px;
+        }
     }
     &-18-m {
         font-size: 18px;
         color: $text2;
         font-weight: 500;
+        @media screen and (max-width: 425px) {
+            font-size: 16px;
+        }
     }
     &-18-l {
         font-size: 18px;
         color: $text2;
         font-weight: 400;
+        @media screen and (max-width: 425px) {
+            font-size: 16px;
+        }
     }
     &-20-l {
         font-weight: 400;
         color: $text2;
         font-size: 20px;
+        @media screen and (max-width: 425px) {
+            font-size: 16px;
+        }
     }   
 }
 .m-text-light {

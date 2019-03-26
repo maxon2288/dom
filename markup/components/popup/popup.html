@@ -1,15 +1,84 @@
-<div class="overlay visible"></div>
+<div class="overlay"></div>
 
-<div class="popup popup-block visible callback-popup">
+<div class="popup callback-popup">
     <div class="popup__container">
         <div class="popup-content">
-            <div class="back-block">
+            <form action="#" class="callback__form back-block form-query">
                 <div class="popup__close popupClose">
                     {{Icon iconName="close"}}
                 </div>
-                Lorem ipsum dolor sit amet, consectetur adipisicing elit. Corporis commodi odit, accusantium ad quasi, unde doloribus vitae nam ea, nobis excepturi autem reiciendis velit tempora optio aspernatur? Atque, perferendis distinctio.
+                <div class="m-title-1 mb20">
+                    Закажите обратный звонок
+                </div>
+                <div class="callback__desc">Наши специалисты перезвонят вам в течении 5 минут</div>
+
+                <div class="callback__fields">
+                    <input type="text" class="m-field mr30 mb30" name="name" placeholder="Ваше имя" autocomplete="off">
+                    <input type="text" class="m-field phone-mask mr30 mb30" name="phone" placeholder="Ваш телефон" autocomplete="off">
+                    <button class="m-button mb30">Отправить</button>
+                </div>
+
+                <i>Оставляя свои данные вы даете согласие на <a href="#">обработку персональных данных</a></i>
+            </form>
+        </div>
+    </div>
+</div>
+
+<div class="callPopup thanx-open" data-popupBlock="thanx-popup"></div>
+
+<div class="popup thanx-popup">
+    <div class="popup__container">
+        <div class="popup-content">
+            <div class="callback__form back-block">
+                <div class="popup__close popupClose">
+                    {{Icon iconName="close"}}
+                </div>
+                <div class="m-title-1 mb20">
+                    Cпасибо! Ваша заявка отправлена!
+                </div>
+                <div class="callback__desc">Наши специалисты перезвонят вам в течении 5 минут</div>
+
+                <div class="m-button mt30 popupClose">Хорошо</div>
             </div>
         </div>
     </div>
 </div>
- 
+
+<div class="popup hard-popup">
+    <div class="popup__container">
+        <div class="popup-content">
+            <form action="#" class="callback__form back-block form-query">
+                <div class="popup__close popupClose">
+                    {{Icon iconName="close"}}
+                </div>
+                <div class="m-title-1 mb20">
+                    Расположение на этаже
+                </div>
+                <img src="%=static=%img/content/img-hard.jpg" alt="">
+            </form>
+        </div>
+    </div>
+</div>
+
+<div class="callPopup subscribe-open" data-popupBlock="subscribe-popup"></div>
+
+<div class="popup subscribe-popup">
+    <div class="popup__container">
+        <div class="popup-content">
+            <form action="#" class="callback__form back-block form-query">
+                <div class="popup__close popupClose">
+                    {{Icon iconName="close"}}
+                </div>
+                <div class="m-title-1 mb10">
+                    Спасибо!
+                </div>
+
+                <div class="m-text-18-l mb20">
+                        Вы подписались на рассылку новостей
+                </div>
+
+                <div class="m-button popupClose">Хорошо</div>
+            </form>
+        </div>
+    </div>
+</div>

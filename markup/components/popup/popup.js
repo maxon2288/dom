@@ -12,6 +12,8 @@ function popup() {
         $(this).closest('form').find('input').val('');
     });
 
+    
+
     $(".popup, .popup__container").click(function(e) {
         if (e.target == this) {
             $('body').css('overflow', 'auto');
@@ -27,6 +29,7 @@ function popup() {
 
     $(".callPopup").on('click', function (event) {
         event.preventDefault();
+        $('.popup, .overlay, .popup__container, .nav-container').removeClass('visible');
         var popup = $(this).attr('data-popupBlock');
         // if ($('.' + popup).hasClass('popup--notfixed')) {
         //     $('.' + popup).scroll(function () {
@@ -36,6 +39,13 @@ function popup() {
         $('body').css('overflow', 'hidden');
         $('.overlay').addClass('visible');
         $('.' + popup).addClass('visible');
+
+    });
+
+    $(".callPopup-img").click(function() {
+        var img = $(this).attr("href");
+        var popupBlock = $(this).attr("data-popupBlock");
+        $("." + popupBlock).find("img").attr("href", img);
     });
 
 }

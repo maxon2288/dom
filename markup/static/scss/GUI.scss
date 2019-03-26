@@ -322,7 +322,7 @@ img {
     color: #68707A;
     display: flex;
     box-shadow: 0px 4px 25px rgba(157, 188, 233, 0.3);
-    min-width: 270px;
+    min-width: 0px;
     border: 2px solid white;
     transition: 0.3s;
     &.error {
@@ -447,6 +447,9 @@ img {
     background: linear-gradient(to right, #7DCAC5 0%, #bae2a9 50%, #7DCAC5 100% );
     background-size: 200%;
     border: none;
+    @media screen and (max-width: 425px) {
+     min-width: 150px;   
+    }
     &:hover {
         background-position: 100% 0;
     }

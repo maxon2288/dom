@@ -118,9 +118,12 @@ i {
     background: #F5FAFC;
     border-radius: 6px;
     width: 100%;   
-    @media screen and (max-width: 1023px) {
+    @media screen and (max-width: 1024px) {
         padding: 50px 30px;
     } 
+    @media screen and (max-width: 425px) {
+        padding: 10px;
+    }
 }
 .about {
     &__container {
@@ -138,6 +141,18 @@ i {
         display: flex;
         align-items: flex-end;
         margin-top: 40px;
+        @media screen and (max-width: 768px) {
+            flex-wrap: wrap-reverse;   
+            align-items: flex-start;
+        }
+    }
+    &__img {
+        display: flex;
+        align-items: flex-start;
+        img {
+            max-width: 100%;
+            height: auto;
+        }
     }
     &__temp {
         display: flex;
@@ -147,6 +162,9 @@ i {
         border-radius: 3px;
         margin-right: 40px;
         padding: 30px;
+        max-width: 400px;
+        width: 100%;
+        min-width: 270px;
         &-title {
             margin-bottom: 20px;
             font-size: 20px;
@@ -527,6 +545,19 @@ i {
 }
 
 
+.popup__direction {
+    display: flex;  
+    align-items: center;
+    .m-text-18-b {
+        margin-right: 15px;
+    }
+    svg {
+        width: 45px;
+        height: 45px;
+    }
+}
+
+
 .gradient-text {
     text-transform: uppercase;
     background: linear-gradient(135deg, #8ACFC0 33%, rgb(186, 236, 199) 100%);
@@ -666,9 +697,13 @@ i {
         width: 100%;
         display: flex;
         justify-content: space-between;
+        @media screen and (max-width: 768px) {
+            flex-direction: column-reverse;
+        }
     }
     &__right {
         // flex-grow: 1;
+        
     }
     &__block {
         width: 100%;
@@ -744,6 +779,7 @@ i {
         padding: 30px;
         position: relative;
         z-index: 100 !important;
+        
         &:hover {
             .video__button{ 
                 transform: scale(0.9);
@@ -853,8 +889,8 @@ i {
         line-height: 16px;
     }
     input {
+        margin: 0 15px;
         margin-bottom: 25px;
-        margin-right: 30px;
     }
     button {
         margin-bottom: 25px;
@@ -894,6 +930,19 @@ i {
         z-index: -1;
         transition: 0.3s;
     }
+    @media screen and (max-width: 375px) {
+        margin: 0;
+        background-color: #fff;
+        box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+        border-radius: 3px;
+        padding: 15px;
+        &:before {
+            display: none;
+        }
+        &:after {
+            display: none;
+        }
+    }
 }
 
 .builders {
@@ -916,6 +965,14 @@ i {
         position: relative;
         margin-top: 40px;
         margin-right: 30px;
+        @media screen and (max-width: 1400px) {
+            width: calc(50% - 30px);
+            margin-bottom: 30px;
+        }
+        @media screen and (max-width: 767px) {
+            width: 100%;
+            margin-right: 0;
+        }
         &:hover {
             .builders__number {
                 @include gradient;
@@ -1024,6 +1081,19 @@ i {
         &:nth-child(3n + 3) {
             margin-right: 0;
         }
+        @media screen and (max-width: 1023px) {
+            width: calc(50% - 35px);
+            &:nth-child(3n + 3) {
+                margin-right: 35px;
+            }
+        }
+        @media screen and (max-width: 767px) {
+            width: 100%;
+            margin-right: 0;
+            &:nth-child(3n + 3) {
+                margin-right: 0px;
+            }
+        }
         &:hover {
             .sale__text {
                 color: #8ACFC0 !important;
@@ -1097,6 +1167,7 @@ i {
         box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
         border-radius: 3px;
         display: flex;
+        flex-wrap: wrap;
     }
     .output-right {
         white-space: nowrap;
@@ -1178,6 +1249,8 @@ i {
     .about__temp  {
         position: absolute;
         z-index: 100;
+        max-width: 400px;
+        width: 100%;
         margin: 0;
         opacity: 0;
         transition: 0.3s;
@@ -1188,14 +1261,15 @@ i {
         width: 100%;
     }
     &__right {
-        flex-grow: 1;
         height: 100%;
+        max-width: 100%;
     }
     &__right-container {
         position: relative;
         height: 100%;
         margin-left: 5px;
         padding-left: 25px;
+        max-width: 100%;
     }
     &__bg {
         position: absolute;
@@ -1235,6 +1309,8 @@ i {
         color: #4A5565 !important;
         max-height: 390px;
         overflow-y: auto;
+        overflow-x: auto;
+        max-width: 100%;
         &::-webkit-scrollbar {
             width: 10px;
           }
@@ -1368,6 +1444,17 @@ i {
         @media screen and (max-width: 1600px) {
             max-width: 545px;
         }
+        @media screen and (max-width: 768px) {
+            max-width: 100%;
+            margin: 0;
+            margin-top: 40px;
+        }
+    }
+}
+
+.video__left-container {
+    @media screen and (max-width: 768px) {
+        margin-top: 50px;
     }
 }
 

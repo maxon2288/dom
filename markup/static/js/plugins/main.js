@@ -59,6 +59,8 @@ $(document).ready(function () {
 		});
 	}
 	
+
+	
 	if ($(".content").height() > $(".sidebar__container").height()) {
 		$(".sidebar__container").stick_in_parent();
 	}
@@ -194,6 +196,10 @@ $(document).ready(function () {
 		}
 	}); 
 
+	var deg = $(".popup__direction").attr("data-rotate");
+	var rotation = "rotate(" + deg + "deg)";
+	$(".popup__hata-direction").css("transform", rotation);
+
 	new WOW().init();
 	
 	$('.hard__item').each(function() {
@@ -202,12 +208,23 @@ $(document).ready(function () {
 			var offset = it.position().left.toFixed('0');
 			var offsetTop = it.closest(".hard__floor").position().top.toFixed('0');
 			console.log(offsetTop);
+			var img = it.attr("data-img");
+			var title = it.attr("data-title");
+			var ploshad = it.attr("data-ploshad");
+			var price = it.attr("data-price");
 			it.closest(".hard").find(".about__temp").css({
 				"left": +offset + 10,
 				"top": +offsetTop + 25,
 				"opacity": 1,
 				"visibility": "visible",
 			});
+			console.log(title)
+			console.log(ploshad)
+			console.log(price)
+			$(".about__temp-title").text(title);
+			$(".about__light").text(ploshad);
+			$(".about__green").text(price);
+			$(".about__img img").attr("src", img);
 		});
 		it.closest(".hard").find(".about__temp").mouseleave(function() {
 			it.closest(".hard").find(".about__temp").css({

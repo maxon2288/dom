@@ -55,7 +55,7 @@ i {
         max-width: 1100px;           
     }
     @media screen and (max-width: 1120px) {
-        padding: 0 10px;
+        padding: 0 15px;
     }
 }
 
@@ -199,9 +199,13 @@ i {
         display: flex;
         position: relative;
         z-index: 0;
+        @media screen and (max-width: 1450px) {
+            transform: scale(0.7);
+            left: 100px;
+        }
         @media screen and (max-width: 1400px) {
             transform: scale(0.6);
-            left: -60px;
+            left: -0px;
         }
         @media screen and (max-width: 1200px) {
             display: none;
@@ -624,7 +628,7 @@ i {
         left: 0;
         bottom: 0;
         right: 0;
-        background: linear-gradient(to right, rgba(255, 255, 255, 0.932) 0%, transparent 67%, rgba(210, 220, 234, 0) 94%);
+        background: linear-gradient(to right, rgba(255, 255, 255, 0.932) 0%, transparent 100%, rgba(210, 220, 234, 0) 94%);
         z-index: -1;
     }
     &__bg {
@@ -678,14 +682,23 @@ i {
 
 .section {
     padding: 95px 0 !important;
+    @media screen and (max-width: 425px) {
+        padding: 65px 0 !important;
+    }
     &.np {
         padding: 0 0 !important;
     }
     &.pt {
         padding: 95px 0 0 0 !important;
+        @media screen and (max-width: 425px) {
+            padding: 65px 0 0 0 !important;
+        }
     }
     &.pb {
         padding: 0 0 95px 0 !important;
+        @media screen and (max-width: 425px) {
+            padding: 0 0 65px 0 !important;
+        }
     }
 }
 
@@ -706,11 +719,11 @@ i {
         
     }
     &__block {
-        width: 100%;
+        min-width: 100%;
         height: 100%;
         position: relative;
         overflow: hidden;
-
+        
         display: flex;
         &:before {
             content: '';
@@ -823,6 +836,9 @@ i {
         transform: translate(40%, 52%);
         transform-origin: 50% 50%;
         z-index: 100;
+        @media screen and (max-width: 767px) {
+            display: none;
+        }
     }
     &-right {
         &:before {
@@ -836,12 +852,21 @@ i {
     display: flex;
     width: 100%;
     justify-content: space-between;
+    @media screen and (max-width: 425px) {
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;    
+    }
     &__right {
         display: flex;
         flex-direction: row-reverse;
     }
     .back {
         width: auto;
+        @media screen and (max-width: 767px) {
+            margin-top: 10px;
+            margin-bottom: 10px;
+        }
         &__text {
             margin-right: 20px;
         }
@@ -935,7 +960,7 @@ i {
         background-color: #fff;
         box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
         border-radius: 3px;
-        padding: 15px;
+        padding: 0px;
         &:before {
             display: none;
         }
@@ -976,6 +1001,7 @@ i {
         &:hover {
             .builders__number {
                 @include gradient;
+            color: #8ACFC0;
                 background-image: linear-gradient(to right, $green 0%, $yellow 100%);
             }
         }
@@ -995,7 +1021,7 @@ i {
         user-select: none;
     }
     &__text {
-        width: 100%;
+        max-width: 100%;
         margin-top: 100px;
         margin-left: 40px;
         position: relative;
@@ -1019,10 +1045,18 @@ i {
     &__img {
         position: relative;
         z-index: 2;
+        @media screen and (max-width: 425px) {
+            svg {
+                height: 30px;
+                width: 30px;
+
+            }
+        }
     }
     &__button {
         position: relative;
         z-index: 2;
+
     }
     &__text {
         font-size: 18px;
@@ -1035,6 +1069,9 @@ i {
         z-index: 2;
         background-image: none;
         transition: 0.3s;
+        @media screen and (max-width: 425px) {
+            margin-left: 10px;
+        }
     }
     &__number {
         font-size: 110px;
@@ -1063,6 +1100,9 @@ i {
         background: #FFFFFF;
         box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.15);
         opacity: 0;
+        @media screen and (max-width: 425px) {
+            display: none;
+        }
         transition: 0.3s;
     }
     &__item {
@@ -1078,6 +1118,12 @@ i {
         border-radius: 3px;
         transition: 0.3s;
         position: relative;
+        @media screen and (max-width: 425px) {
+            padding: 15px;
+            svg {
+                transform: scale(0.8);
+            }
+        }
         &:nth-child(3n + 3) {
             margin-right: 0;
         }
@@ -1156,9 +1202,11 @@ i {
         padding-left: 25px;
         width: 100%;
         display: flex;
-        width: 100%;
-        flex-direction: column;
-        margin-top: 26px;
+        
+        padding-top: 26px;
+        @media screen and (max-width: 470px) {
+            overflow-x: auto;
+        }
     }
     &__top {
         width: 100%;
@@ -1168,6 +1216,9 @@ i {
         border-radius: 3px;
         display: flex;
         flex-wrap: wrap;
+        @media screen and (max-width: 1200px) {
+            padding: 20px;
+        }
     }
     .output-right {
         white-space: nowrap;
@@ -1188,6 +1239,14 @@ i {
         &:last-child {
             margin-right: 0;
         }
+        @media screen and (max-width: 1400px) {
+            width: 100%;     
+            margin-right: 0;
+            margin-bottom: 30px;           
+        }
+        .m-text-18-m {
+            margin-bottom: 10px;
+        }
     }
     .range-container {
         margin-bottom: 35px;
@@ -1207,9 +1266,14 @@ i {
         background: linear-gradient(180deg, #88CFC2 0%, #A6DCB6 100%);
         border-radius: 3px;
         display: flex;
+        width: auto;
         flex-direction: column-reverse;
+        align-items: flex-end;
         counter-increment: mega-step;
         position: relative;
+        min-width: 433px;
+        max-width: 433px;
+        align-self: flex-start;
     }
     &__floor {
         display: flex;
@@ -1259,6 +1323,11 @@ i {
     &__container {
         display: flex;
         width: 100%;
+        align-items: stretch;
+        @media screen and (max-width: 767px) {
+            flex-direction: column;
+            align-items: center;
+        }
     }
     &__right {
         height: 100%;
@@ -1266,12 +1335,16 @@ i {
     }
     &__right-container {
         position: relative;
-        height: 100%;
         margin-left: 5px;
         padding-left: 25px;
         max-width: 100%;
+        @media screen and (max-width: 767px) {
+            padding: 0;
+            margin: 0;
+            margin-top: 30px;
+        }
     }
-    &__bg {
+    &__bg { 
         position: absolute;
         z-index: 1;
         bottom: 0;
@@ -1283,8 +1356,8 @@ i {
         min-width: 15px;
         max-width: 15px;
         height: 15px;
-        background: #4A5565 ;
-        border: 2px solid #4A5565;
+        background: #68707A ;
+        border: 2px solid #68707A;
         box-sizing: border-box;
         margin-right: 7.5px;
         cursor: pointer;
@@ -1298,11 +1371,10 @@ i {
         &.orange {
             background-color: #EF8E6F;
         }
-        &.purp {
-            background-color: #B259DB;
-        }
     }
-    
+    &__mobile-container {
+        width: 100%;
+    }
     &__table {
         margin-top: 35px;
         font-size: 16px !important;
@@ -1311,19 +1383,10 @@ i {
         overflow-y: auto;
         overflow-x: auto;
         max-width: 100%;
-        &::-webkit-scrollbar {
-            width: 10px;
-          }
-          
-          /* Track */
-          &::-webkit-scrollbar-track {
-            background: #f1f1f1; 
-          }
-          
-          /* Handle */
-          &::-webkit-scrollbar-thumb {
-            background: linear-gradient(to bottom, $green 0%, $yellow 100%); 
-          }
+        @media screen and (max-width: 1400px) {
+            width: 100%;
+        }
+        
           
         &-icon {
             display: block;
@@ -1347,10 +1410,11 @@ i {
             display: flex;
             align-items: center;
             vertical-align: middle;
+            white-space: nowrap;
         }
         table {
             width: 100%;
-            
+            margin-bottom: 70px;
         }
         td, th {
             padding: 8px 10px;
@@ -1392,6 +1456,13 @@ i {
             align-items: center;
             justify-content: center;
             transition: 0.3s;
+            &:hover {
+                svg {
+                    fill: #fff;
+
+                }
+                background-image: linear-gradient(126.1deg, #7ECBC5 -9.91%, #B7E1AC 111.57%);
+            }
         }
         svg {
             fill: $green;
@@ -1400,23 +1471,18 @@ i {
         &-button {
             display: flex;
             align-items: center;
+            cursor: pointer;
             .m-link {
                 margin-left: 20px;
-            }
-            &:hover {
-                svg {
-                    fill: #fff;
-
-                }
-                .hard__table-eye {
-
-                    background-image: linear-gradient(126.1deg, #7ECBC5 -9.91%, #B7E1AC 111.57%);
-                }
             }
         }
         
     }
     
+}
+
+.busy {
+    cursor: default;
 }
 
 .video-slider {
@@ -1431,7 +1497,8 @@ i {
     }
 }
 .video-slider-container {
-    max-width: 100%;    
+    max-width: 100%;
+    
     .swiper-slide {
         display: flex;
     }
@@ -1467,12 +1534,20 @@ i {
     color: #68707A;
     .output-left {
         width: 100%;
-        padding: 27px 10px 27px 30px;
+        height: 70px;
+        display: flex;
+        align-items: center;
+        justify-content: flex-start;
+        padding: 0px 10px 0px 30px;
         border-right: 2px solid #F5FAFC;
     }   
     .output-right {
         width: 100%;
-        padding: 27px 30px 27px 10px;
+        height: 70px;
+        display: flex;
+        align-items: center;
+        justify-content: flex-end;
+        padding: 0 30px 0px 10px;
         text-align: right;
 
     }
@@ -1482,6 +1557,10 @@ i {
     &__content {
         margin-top: 20px;
         display: flex;
+        align-items: flex-start;
+        @media screen and (max-width: 1024px) {
+            flex-direction: column;
+        }
     }
     &__left {
         background: #F5FAFC;
@@ -1491,6 +1570,12 @@ i {
         box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
         border-radius: 3px;
         margin-right: 75px;
+        @media screen and (max-width: 1024px) {
+            max-width: 100%;
+        }
+        @media screen and (max-width: 767px) {
+            padding: 20px;
+        }
     }
     .range-container {
         margin-bottom: 20px;
@@ -1503,9 +1588,15 @@ i {
         display: flex;
         flex-direction: column;
         width: 100%;    
+        @media screen and (max-width: 1024px) {
+            margin-top: 30px;
+        }
     }
     &__form-container {
         margin-right: 30px; 
+        @media screen and (max-width: 425px) {
+            margin-right: 0;
+        }
     }
     &__form {
         display: flex;
@@ -1519,6 +1610,10 @@ i {
     }
     &__top {
         display: flex;
+        @media screen and (max-width: 767px) {
+            flex-direction: column;
+            justify-content: center;
+        }
     }
     &__item {
         margin-right: 30px;
@@ -1527,12 +1622,29 @@ i {
         border-radius: 3px;
         padding: 75px 40px 60px 40px;
         font-size: 36px;
+        max-width: 370px;
+        width: 100%;
+        &:last-child {
+            margin-right: 0;
+        }
+        @media screen and (max-width: 767px) {
+            margin-top: 30px;
+            max-width: 100%;
+        }
+        @media screen and (max-width: 425px) {
+            padding: 30px;
+        }
+    }
+    &__container {
+        max-width: 100%;
     }
     &__result {
         background-image: linear-gradient(to right, $green 0%, #B0DFAF 100%);
+        color: #8ACFC0;
         @include gradient;
         font-weight: bold;
         text-transform: none;
+        margin: 20px 0;
     }
 }
 .double-range {
@@ -1559,7 +1671,7 @@ i {
     &__content {
         display: flex;
         justify-content: space-between;
-
+        
     }
     &__left {
         background: #FFFFFF;
@@ -1567,6 +1679,9 @@ i {
         border-radius: 3px;
         padding: 40px;
         margin-right: 10px;
+        @media screen and (max-width: 425px) {
+            padding: 20px;
+        }
         p {
             margin-bottom: 25px;
             color: #68707A;
@@ -1581,6 +1696,9 @@ i {
     }
     &__right {
         display: flex;
+        @media screen and (max-width: 1024px) {
+            display: none;
+        }
     }
     &__img {
         width: 219px;
@@ -1609,12 +1727,13 @@ i {
     }
     &__slider {
         width: 100%;
+
         .swiper-container {
             height: 100%;
         }
         .swiper-slide {
             background: linear-gradient(133.16deg, #7ECBC5 35.5%, #B9E2AB 88.98%);
-            width: 232px;
+            width: 229px;
             height: 315px;
             border-radius: 3px;
             cursor: pointer;
@@ -1647,6 +1766,9 @@ i {
         .swiper-slide {
             user-select: none;
         }
+        @media screen and (max-width: 1024px) {
+            flex-direction: column;
+        }
     }
     .m-bg-cont {
         width: 100%;
@@ -1657,16 +1779,35 @@ i {
         display: flex;
         flex-direction: column;
         align-items: flex-start;
+        @media screen and (max-width: 1024px) {
+            margin-bottom: 30px;
+        }
+        @media screen and (max-width: 768px) {
+            margin-right: 0;
+        }
     }
     &__right {
         max-width: 880px;
         width: 100%;
         justify-content: flex-end;
+        @media screen and (max-width: 1440px) {
+            max-width: 500px;
+        }
+        @media screen and (max-width: 1024px) {
+            max-width: 100%;
+        }
+        @media screen and (max-width: 768px) {
+            display: flex;
+            flex-direction: column-reverse;
+        }
     }
     .buttons {
         margin-top: 25px;
         display: flex;
         justify-content: flex-end;
+        @media screen and (max-width: 768px) {
+            margin-bottom: 10px;
+        }
     }
     &__number {
         margin-right: 25px;
@@ -1766,6 +1907,9 @@ i {
     margin: 0;
     flex-grow: 1;
     align-items: flex-start;
+    @media screen and (max-width: 1024px) {
+        flex-direction: column;
+    }
 }
 
 .sidebar {
@@ -1774,6 +1918,21 @@ i {
     margin-left: 30px;
     height: 100%;
     margin-top: -30px;
+    @media screen and (max-width: 1400px) {
+        min-width: 250px;
+        max-width: 250px;   
+    }
+    @media screen and (max-width: 1023px) {
+        min-width: 0;
+        max-width: 100%;
+        width: 100%;
+        margin-left: 0;
+    }
+    .m-button {
+        width: 100%;
+        min-width: 0;
+        max-width: 100%;
+    }
     &__container {
         margin-top: 30px;
         display: flex;
@@ -1795,6 +1954,22 @@ i {
         &:nth-child(3n + 3) {
             margin-right: 0 !important;
         }
+        @media screen and (max-width: 1366px) {
+            width: calc(50% - 15px);
+            &:nth-child(3n + 3) {
+                margin-right: 30px !important;
+            }
+            &:nth-child(2n + 2) {
+                margin-right: 0 !important;
+            }
+        }
+        @media screen and (max-width: 550px) {
+            width: 100%;
+            margin-right: 0 !important;
+            &:nth-child(3n + 3) {
+                margin-right: 0px !important;
+            }
+        }
     }
 }
 .action {
@@ -1805,6 +1980,9 @@ i {
     display: flex;
     flex-direction: column;
     align-items: flex-start;
+    @media screen and (max-width: 1400px) {
+        padding: 20px;
+    }
     &-top {
         font-weight: bold;
         @include gradient;
@@ -1851,14 +2029,18 @@ i {
         width: 100%;
     }
     &__item {
-        width: calc(25% - 22.5px);
+        width: calc(25% - 30px);
         background: #FFFFFF;
         box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
         border-radius: 3px;
         margin-right: 30px;
         margin-bottom: 30px;
         transition: 0.3s;
-        &:nth-child(4n + 4) {
+        @media screen and (max-width: 1024px) {
+            width: calc(50% - 30px);
+        }
+        @media screen and (max-width: 600px) {
+            width: 100%;
             margin-right: 0;
         }
         &-top {
@@ -1866,6 +2048,9 @@ i {
             height: 255px;
             width: 100%;
             overflow: hidden;
+            @media screen and (max-width: 600px) {
+                height: 150px;
+            }
         }
         &-img {
             width: 100%;
@@ -1874,9 +2059,13 @@ i {
             &:hover {
                 transform: scale(1.2);
             }
+            
         }
         &-content {
             padding: 40px;
+            @media screen and (max-width: 425px) {
+                padding: 20px;
+            }
         }
         &-title {
             display: block;
@@ -1992,6 +2181,7 @@ i {
     width: 100%;
     justify-content: center;
     margin-top: 30px;
+    margin-bottom: 30px;
     &__container {
         width: 100%;
     }
@@ -2054,6 +2244,11 @@ i {
         &:active {
             transform: translateY(1px);
         }
+        @media screen and (max-width: 1024px) {
+            width: 100%;
+            display: flex;
+            justify-content: center;
+        }
     }
     &__top {
         background-color: #1D3961;
@@ -2068,6 +2263,12 @@ i {
             align-items: center;
             width: 100%;
             justify-content: space-between;
+            @media screen and (max-width: 1440px) {
+                max-width: 700px;   
+            }
+            @media screen and (max-width: 1024px) {
+                display: none;
+            }
             a {
                 display: flex;
                 font-weight: 400;
@@ -2092,8 +2293,17 @@ i {
             flex-direction: row;
             flex-wrap: nowrap;
             justify-content: space-between;
-            padding: 35px 0;
+            padding: 25px 0;
             align-items: center;
+            @media screen and (max-width: 768px) {
+                flex-wrap: wrap;
+            }
+            @media screen and (max-width: 425px) {
+                flex-direction: column;
+            }
+            @media screen and (max-width: 1120px) {
+                padding: 0 10px;
+            }
         }
         &-politic {
             color: #96A2B4;
@@ -2101,6 +2311,7 @@ i {
             font-size: 14px;
             display: flex;
             text-decoration: underline;
+            margin: 10px 0;
             &:hover {
                 text-decoration: none;
             }
@@ -2110,6 +2321,9 @@ i {
             flex-wrap: wrap;
             max-width: 560px;
             width: 100%;
+            @media screen and (max-width: 1024px) {
+                display: none;
+            }
             a {
                 color: #4A5565;
                 width: 33%;
@@ -2122,12 +2336,18 @@ i {
         }
         .header__phone {
             margin-right: 36px;
+            @media screen and (max-width: 1200px) {
+                display: none;
+            }
         }
     }
     &__phone {
         display: flex;
     }
     &__social {
+        display: flex;
+        align-items: center;
+        margin: 10px 0;
         a {
             margin: 0 12px;
             svg {
@@ -2142,12 +2362,21 @@ i {
             }
         }
     }
-
+    .m-button {
+        margin: 10px 0;
+    }
     &__markello {
+        @media screen and (max-width: 1120px) {
+            padding: 0 10px;
+        }
         .wrapper {
             display: flex;
             justify-content: space-between;
             padding: 20px 0;
+            @media screen and (max-width: 425px) {
+                flex-direction: column;
+                align-items: center;
+            }
         }
         p {
             font-size: 14px;
@@ -2160,6 +2389,9 @@ i {
             display: flex;
             align-items: center;
             transition: 0.3s;
+            @media screen and (max-width: 425px) {
+                margin-top: 20px;
+            }
             span {
                 margin-left: 5px;
                 color: $green;
@@ -2268,6 +2500,16 @@ i {
                 transform: scale(0.8);
             }
         }
+        @media screen and (max-width: 1023px) {
+            width: calc(33% - 30px);
+        }
+        @media screen and (max-width: 767px) {
+            width: calc(50% - 30px);
+        }
+        @media screen and (max-width: 425px) {
+            width: 100%;
+            margin-right: 0px;
+        }
     }
     &__img {
         width: 100%;
@@ -2321,6 +2563,10 @@ i {
         vertical-align: top;
         @include gradient;
         background-image: linear-gradient(135deg, $green 0, #BAE2A9 100%);
+        @media screen and (max-width: 1440px) {
+            font-size: 150px;
+            line-height: 150px;
+        }
     }
     &__title  {
         margin-bottom: 10px;
@@ -2329,12 +2575,26 @@ i {
         display: flex;
         flex-direction: column;
         align-items: flex-start;
+        @media screen and (max-width: 1023px) {
+            align-items: center;
+            max-width: 100%;
+            width: 100%;
+            text-align: center;
+        }
     }
     &__img {
         position: absolute;
         right: 0;
         bottom: 0;
         z-index: -1;
+        img {
+            @media screen and (max-width: 1366px) {
+                max-width: 600px;                
+            }
+        }
+        @media screen and (max-width: 1023px) {
+            display: none;   
+        }
     }
     .m-button {
         margin-top: 30px;
@@ -2342,9 +2602,7 @@ i {
 }
 
 .about-blocks {
-    &__img {
-        margin-left: 45px;
-    }
+    
     
     .back-block {
         height: 395px;
@@ -2352,6 +2610,12 @@ i {
         .m-bg-cont {
             width: 100%;
             height: 100%;
+        }
+        @media screen and (max-width: 1400px) {
+            width: 450px; 
+        }
+        @media screen and (max-width: 1024px) {
+            width: 100%; 
         }
     }
     &__item {
@@ -2367,7 +2631,18 @@ i {
                 margin-left: 0;
                 margin-right: 45px;
             } 
-         }
+        }
+        @media screen and (max-width: 1024px) {
+            flex-direction: column !important;
+            margin-top: 20px;
+        }
+    }
+    &__img {
+        margin-left: 45px;
+        @media screen and (max-width: 1024px) {
+            margin-left: 0 !important;
+            margin-right: 0 !important;
+        }
     }
 }
 
@@ -2406,6 +2681,10 @@ i {
                 }
             }
         }
+        @media screen and (max-width: 425px) {
+            flex-direction: column;
+            align-items: flex-start;
+        }
         &.active {
             .collapsible__button {
                 svg {
@@ -2416,6 +2695,11 @@ i {
     }
     &__left {
         display: flex;
+        @media screen and (max-width: 425px) {
+            flex-direction: column;
+            align-items: flex-start;
+            margin-bottom: 10px;
+        }
     }
     &-body {
         border: none !important;
@@ -2440,6 +2724,9 @@ i {
         @include gradient;
         margin-right: 45px;
         background-image: linear-gradient(to right, $green 0%, $yellow 100%);
+        @media screen and (max-width: 767px) {
+            margin-right: 10px;
+        }
     }
 }
 
@@ -2455,6 +2742,9 @@ i {
     .swiper-container {
         max-width: 100%;
         height: 290px;
+        @media screen and (max-width: 1024px) {
+            height: 170px;
+        }
     }
     &__top {
         display: flex;
@@ -2462,11 +2752,23 @@ i {
         justify-content: space-between;
         align-items: center;
         margin-bottom: 27px;
+        @media screen and (max-width: 425px) {
+            flex-direction: column;
+            align-items: flex-start;
+        }
     }
     &__left {
         display: flex;
         height: 100%;
         align-items: center;
+        @media screen and (max-width: 767px) {
+            flex-direction: column;
+            align-items: flex-start;
+
+        }
+        @media screen and (max-width: 425px) {
+            margin-bottom: 20px;
+        }
     }
     &__year {
         font-size: 24px;
@@ -2475,13 +2777,13 @@ i {
         margin-right: 20px;
     }
     &-slide {
-        height: 290px;
         background-image: linear-gradient(to right, $green 0%, $yellow 100%);
         display: flex;
         align-items: center;
         justify-content: center;
         width: 100%;
         cursor: pointer;
+        
         &:hover {
             .hod__img {
                 transform: scale(0.9);
@@ -2542,6 +2844,9 @@ i {
         display: flex;
         flex-wrap: wrap;
     }
+    @media screen and (max-width: 1023px) {
+        flex-direction: column;       
+    }
     a {
         cursor: pointer;
         &:hover {
@@ -2556,6 +2861,7 @@ i {
         color: #1D3961;
         font-size: 20px;
         margin-bottom: 40px;
+        
         a {
             color: #1D3961;
         }
@@ -2570,6 +2876,11 @@ i {
         table {
             font-size: 20px;
             font-weight: bold;
+        }
+        @media screen and (max-width: 425px) {
+            width: 100%;
+            margin-right: 0;
+            margin-bottom: 20px;
         }
     }
     &__img {

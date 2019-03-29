@@ -41,6 +41,52 @@ function popup() {
         $('.' + popup).addClass('visible');
 
     });
+    $(".callPopupOnPopup").on('click', function (event) {
+        event.preventDefault();
+        var popup = $(this).attr('data-popupBlock');
+        // if ($('.' + popup).hasClass('popup--notfixed')) {
+        //     $('.' + popup).scroll(function () {
+        //         $('.' + popup).css('top', $(window).scrollTop()+ "px");
+        //     });
+        // };
+        $(this).closest(".popup").css("opacity", "0");
+        $('body').css('overflow', 'hidden');
+        $('.overlay').addClass('visible');
+        $('.' + popup).addClass('visible');
+
+    });
+
+    $(".free").click(function() {
+        var it = $(this);
+        var img = it.attr("data-img");
+        var floor = it.attr("data-floor");
+        var apartment = it.attr("data-apartment");
+        var ploshad = it.attr("data-ploshad");
+        var rooms = it.attr("data-rooms");
+        var price = it.attr("data-price");
+        var otdelka = it.attr("data-otdelka");
+        var north = it.attr("data-north");
+
+        $(".hard-floor").text('');
+        $(".hard-apartment").text('');
+        $(".hard-ploshad").text('');
+        $(".hard-rooms").text('');
+        $(".hard-price").text('');
+        $(".hard-otdelka").text('');
+        $(".hard-north").attr("data-rotate", "");
+        $(".hard-img").attr("src", '');
+        $(".hard-img").closest('a').attr("href", '');
+        
+        $(".hard-floor").text(floor);
+        $(".hard-apartment").text(apartment);
+        $(".hard-ploshad").text(ploshad);
+        $(".hard-rooms").text(rooms);
+        $(".hard-price").text(price);
+        $(".hard-otdelka").text(otdelka);
+        $(".hard-north").attr("data-rotate", north);
+        $(".hard-img").attr("src", img);
+        $(".hard-img").closest('a').attr("href", img);
+    });
 
     $(".callPopup-img").click(function() {
         var img = $(this).attr("href");

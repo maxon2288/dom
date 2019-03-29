@@ -38,6 +38,11 @@
                 height: auto;
             }
         }
+        &-top {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
         &-direction{
             svg {
                 fill: $green;
@@ -76,6 +81,16 @@
                 height: auto;
             }
         }
+    }
+    .lg-img-content {
+        width: 100%;
+        display: flex;
+        
+        img {
+            max-width: 100%;
+            height: auto;
+        }
+        height: 100%;
     }
     &__close{
         position: absolute;
@@ -133,6 +148,12 @@
         opacity: 1;
         perspective: 0.3;
         transform: scale(1);
+    }
+}
+
+.video-slider-container {
+    .swiper-slide {
+        width: 100%;
     }
 }
 

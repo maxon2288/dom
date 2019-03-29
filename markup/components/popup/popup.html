@@ -48,6 +48,21 @@
     <div class="popup__container">
         <div class="popup-content">
             <form action="#" class="callback__form back-block form-query">
+                <div class="popup__close callPopup" data-popupBlock="hard-info-popup">
+                    {{Icon iconName="close"}}
+                </div>
+                <div class="m-title-1 mb20">
+                    Расположение на этаже
+                </div>
+                <img src="%=static=%img/content/img-hard.jpg" alt="">
+            </form>
+        </div>
+    </div>
+</div>
+<div class="popup hard-popup-2">
+    <div class="popup__container">
+        <div class="popup-content">
+            <form action="#" class="callback__form back-block form-query">
                 <div class="popup__close popupClose">
                     {{Icon iconName="close"}}
                 </div>
@@ -98,39 +113,51 @@
 
                     <div class="popup__hata-img lightgallery">
                         <a href="%=static=%img/content/hata.png" class="lg-img-content">
-                            <img src="%=static=%img/content/hata.png">
+                            <img src="" class="hard-img">
                         </a>
                     </div>
                     <div class="popup__hata-right">
-                        <div class="popup__direction mb25" data-rotate="0">
-                            <div class="m-text-18-b">Север:</div>
-                            <div class="popup__hata-direction">
-                                {{Icon iconName="direct" className="svg-direction"}}
+                        <div class="popup__hata-top mb25">
+                            <div class="popup__direction mr20 hard-north" data-rotate="0">
+                                <div class="m-text-18-b">Север:</div>
+                                <div class="popup__hata-direction">
+                                    {{Icon iconName="direct" className="svg-direction"}}
+                                </div>
                             </div>
+
+                            <div class="m-link callPopup" data-popupBlock="hard-popup">Расположение на этаже</div>
                         </div>
                         <div class="popup__hata">
                             <div class="popup__hata-item">
+                                <div class="m-text-18-m mb15">Этаж: </div>
+                                <div class="popup__hata-text m-text-16-b hard-floor">
+                                    
+                                </div>
+                            </div>
+                            <div class="popup__hata-item">
+                                <div class="m-text-18-m mb15">Квартира: </div>
+                                <div class="popup__hata-text m-text-16-b hard-apartment">
+                                </div>
+                            </div>
+                            <div class="popup__hata-item">
                                 <div class="m-text-18-m mb15">Площадь: </div>
-                                <div class="popup__hata-text m-text-16-b">
-                                    29.1
+                                <div class="popup__hata-text m-text-16-b hard-ploshad">
                                 </div>
                             </div>
                             <div class="popup__hata-item">
                                 <div class="m-text-18-m mb15">Комнат:</div>
-                                <div class="popup__hata-text m-text-16-b">
-                                    2
+                                <div class="popup__hata-text m-text-16-b hard-rooms">
+                                    
                                 </div>
                             </div>
                             <div class="popup__hata-item">
                                 <div class="m-text-18-m mb15">Стоимость:</div>
-                                <div class="popup__hata-text m-text-16-b">
-                                    2 000 000
+                                <div class="popup__hata-text m-text-16-b hard-price">
                                 </div>
                             </div>
                             <div class="popup__hata-item">
                                 <div class="m-text-18-m mb15">Отделка:</div>
-                                <div class="popup__hata-text m-text-16-b">
-                                    да 
+                                <div class="popup__hata-text m-text-16-b hard-otdelka">
                                 </div>
                             </div>
                         </div>

@@ -67,14 +67,10 @@ $(document).ready(function() {
         var it = $(this);
          it.validate({
 			rules: {
-				name: {
+				email: {
                     required: true,
+                    email: true,
                 },
-                phone: {
-                    required: true,
-                    minlength: 17,
-                    maxlength: 17,
-                }
 			},
 
 			errorPlacement: function (error, element) {

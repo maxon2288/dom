@@ -16,11 +16,17 @@ $(document).ready(function () {
 		},
 	});
 	var swiper = new Swiper('.video-slider-container', {
+		slidesPerView: 1,
 		navigation: {
 			nextEl: '.video-next',
 			prevEl: '.video-prev',
 		},
 	});
+
+	if ($(window).width() <= 1400) {
+		var removeDiv = $(".hard__table").remove();
+		removeDiv.appendTo(".hard__mobile-container");
+	}
 	var swiper = new Swiper('.quality-slider', {
 		spaceBetween: 30,
 		slidesPerView: "auto",
@@ -31,6 +37,11 @@ $(document).ready(function () {
 			nextEl: '.quality-next',
 			prevEl: '.quality-prev',
 		},
+		breakpoints: {
+			425: {
+				spaceBetween: 10,
+			}
+		}
 	});
 	var swiper = new Swiper('.ipo-slider', {
 		spaceBetween: 30,
@@ -42,6 +53,14 @@ $(document).ready(function () {
 			nextEl: '.ipo-next',
 			prevEl: '.ipo-prev',
 		},
+		breakpoints: {
+			768: {
+				slidesPerView: 2,
+			},
+			425: {
+				slidesPerView: 1,
+			}
+		}
 	});
 
 	for (var i = 1; i <= $(".hod__item").length; i++) {
@@ -55,6 +74,17 @@ $(document).ready(function () {
 			navigation: {
 				nextEl: elemNext,
 				prevEl: elemPrev,
+			},
+			breakpoints: {
+				1023: {
+					slidesPerView: 3,
+				},
+				767: {
+					slidesPerView: 2,
+				},
+				425: {
+					slidesPerView: 1,
+				},
 			},
 		});
 	}
@@ -81,13 +111,11 @@ $(document).ready(function () {
 		on: {
 			slideNextTransitionStart: function () {
 				var index = +$(".progress__slide.swiper-slide-active").index() + 1;
-				console.log(index);
 				$(".progress-item").removeClass("active");
 				$(".progress-item:nth-child("+index+")").addClass("active");
 			},
 			slidePrevTransitionStart: function () {
 				var index = +$(".progress__slide.swiper-slide-active").index() + 1;
-				console.log(index);
 				$(".progress-item").removeClass("active");
 				$(".progress-item:nth-child("+index+")").addClass("active");
 			},
@@ -104,9 +132,11 @@ $(document).ready(function () {
 			it.closest(".tabs-container").find(".tab").removeClass("active");
 			it.addClass("active");
 			$(".cont-tab").removeClass("active");
-			it.closest(".tabs-container").find("." + href).addClass('active');
-			it.closest('.tabs-container').find("." + href + " input").val('');
-			it.closest('.tabs-container').find("." + href + " input").removeClass("is-focus");
+			$("." + href).each(function () {
+				it.closest(".tabs-container").find("." + href).addClass('active');
+				it.closest('.tabs-container').find("." + href + " input").val('');
+				it.closest('.tabs-container').find("." + href + " input").removeClass("is-focus");
+			});
 		});
 	});
 	
@@ -170,6 +200,34 @@ $(document).ready(function () {
 		});
 	})
 
+	$('.m-range-double').each(function(){
+		var slider = $(this).get(0);
+		var elem = $(this);
+		var min = $(this).attr("data-min");
+		var max = $(this).attr("data-max");
+		noUiSlider.create(slider, {
+			start: [min, max],
+			step: $(this).data('step'),
+			connect: true,
+			range: {
+				'min': $(this).data('min'),
+				'max': $(this).data('max')
+			},
+			format: wNumb({
+				decimals: 0
+			})
+		});
+		slider.noUiSlider.on('update', function () {
+			// var x = +slider.noUiSlider.get();
+			// elem.closest('.range-container').find('.output-right').text(x.toFixed(0).replace(/(\d)(?=(\d\d\d)+([^\d]|$))/g, '$1 ' ));
+			// elem.closest('.range-container').find('.output-right').text(x.toFixed(0).replace(/(\d)(?=(\d\d\d)+([^\d]|$))/g, '$1 ' ));
+			var valmin = +elem.closest('.range-container').find('.noUi-handle-lower span').text();
+			var valmax = +elem.closest('.range-container').find('.noUi-handle-upper span').text();
+			elem.closest('.range-container').find('.output-left').text(valmin.toFixed(0).replace(/(\d)(?=(\d\d\d)+([^\d]|$))/g, '$1 ' ));			
+			elem.closest('.range-container').find('.output-right').text(valmax.toFixed(0).replace(/(\d)(?=(\d\d\d)+([^\d]|$))/g, '$1 ' ));			
+		});
+	})
+
 
 	$(document).ready(function() {
 		$('select').niceSelect();
@@ -202,12 +260,11 @@ $(document).ready(function () {
 
 	new WOW().init();
 	
-	$('.hard__item').each(function() {
+	$('.free').each(function() {
 		var it = $(this);
 		it.mouseenter(function() {
 			var offset = it.position().left.toFixed('0');
 			var offsetTop = it.closest(".hard__floor").position().top.toFixed('0');
-			console.log(offsetTop);
 			var img = it.attr("data-img");
 			var title = it.attr("data-title");
 			var ploshad = it.attr("data-ploshad");
@@ -218,9 +275,6 @@ $(document).ready(function () {
 				"opacity": 1,
 				"visibility": "visible",
 			});
-			console.log(title)
-			console.log(ploshad)
-			console.log(price)
 			$(".about__temp-title").text(title);
 			$(".about__light").text(ploshad);
 			$(".about__green").text(price);
@@ -233,6 +287,12 @@ $(document).ready(function () {
 			});
 		});
 		it.closest(".hard__home").mouseleave(function() {
+			it.closest(".hard").find(".about__temp").css({
+				"visibility": "hidden",
+				"opacity": "0",
+			});
+		});
+		$(".busy").mouseenter(function() {
 			it.closest(".hard").find(".about__temp").css({
 				"visibility": "hidden",
 				"opacity": "0",

@@ -7,6 +7,7 @@ $(document).ready(function () {
             function() {
                 var x = $(ya).attr("data-x");
                 var y = $(ya).attr("data-y");
+                var marker = $(".map-marker").attr("data-img");
                     myMap = new ymaps.Map($(ya)[0], {
                         center: [x , y],
                         zoom: 13,
@@ -17,7 +18,7 @@ $(document).ready(function () {
             
                     var myPlacemark = new ymaps.Placemark([x, y], {},
                 { iconLayout: 'default#image',
-                iconImageHref: 'static/img/content/marker.svg',
+                iconImageHref: marker,
                 iconImageSize: [22.45, 31], });    
             
                 myMap.geoObjects.add(myPlacemark);

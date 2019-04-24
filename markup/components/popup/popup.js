@@ -83,7 +83,7 @@ function popup() {
         $(".hard-otdelka").text(otdelka);
         $(".hard-north").attr("data-rotate", north);
         $(".hard-img").attr("src", img);
-        $(".hard-img").closest('a').attr("hr    ef", img);
+        $(".hard-img").closest('a').attr("href", img);
     });
 
     $(".callPopup-img").click(function() {

@@ -273,10 +273,11 @@ $(document).ready(function () {
 				"opacity": 1,
 				"visibility": "visible",
 			});
-			$(".about__temp-title").text(title);
-			$(".about__light").text(ploshad);
-			$(".about__green").text(price);
-			$(".about__img img").attr("src", img);
+			it.closest(".hard").find(".about__temp-title").text(title);
+			it.closest(".hard").find(".about__light").text(ploshad);
+			it.closest(".hard").find(".about__green").text(price);
+			it.closest(".hard").find(".about__img img").attr("src", img);
+			// it.closest(".hard").find(".about__img img").attr("src", img);
 		});
 		it.closest(".hard").find(".about__temp").mouseleave(function() {
 			it.closest(".hard").find(".about__temp").css({

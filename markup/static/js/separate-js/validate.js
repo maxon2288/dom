@@ -19,7 +19,8 @@ $(document).ready(function() {
 			submitHandler: function() {
 				$.ajax({
 					success: function(){
-                        $(".thanx-open").trigger("click");
+                        $(".callPopup.thanx-open").trigger("click");
+                        $('body').css('overflow-y', 'hidden');
                         
                         
                         //THE LAST LINES
@@ -51,9 +52,8 @@ $(document).ready(function() {
 			submitHandler: function() {
 				$.ajax({
 					success: function(){
-                        $(".thanx-open").trigger("click");
-                        
-                        
+                        $(".callPopup.thanx-open").trigger("click");
+                        $('body').css('overflow-y', 'hidden');
                         //THE LAST LINES
                         $(".popup").find("input, textarea").val('');
                         it.find("input, textarea").val("");
@@ -79,7 +79,8 @@ $(document).ready(function() {
 			submitHandler: function() {
 				$.ajax({
 					success: function(){
-                        $(".subscribe-open").trigger("click");
+                        $(".callPopup.subscribe-open").trigger("click");
+                        $('body').css('overflow-y', 'hidden');
                         
                         
                         //THE LAST LINES
@@ -111,8 +112,7 @@ $(document).ready(function() {
 			submitHandler: function() {
 				$.ajax({
 					success: function(){
-                        $(".thanx-open").trigger("click");
-                        
+                        $(".callPopup.thanx-open").trigger("click");
                         
                         //THE LAST LINES
                         $(".popup").find("input, textarea").val('');

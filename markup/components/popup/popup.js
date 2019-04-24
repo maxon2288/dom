@@ -12,8 +12,6 @@ function popup() {
         $(this).closest('form').find('input').val('');
     });
 
-    
-
     $(".popup, .popup__container").click(function(e) {
         if (e.target == this) {
             $('body').css('overflow', 'auto');
@@ -27,7 +25,7 @@ function popup() {
     //     $(".popup__container").removeClass('visible');
     // }        
 
-    $(".callPopup").on('click', function (event) {
+    $(document).on('click', ".callPopup", function (event) {
         event.preventDefault();
         $('.popup, .overlay, .popup__container, .nav-container').removeClass('visible');
         var popup = $(this).attr('data-popupBlock');
@@ -36,7 +34,7 @@ function popup() {
         //         $('.' + popup).css('top', $(window).scrollTop()+ "px");
         //     });
         // };
-        $('body').css('overflow', 'hidden');
+        $('body').css('overflow', 'hidden !important');
         $('.overlay').addClass('visible');
         $('.' + popup).addClass('visible');
 
@@ -76,7 +74,7 @@ function popup() {
         $(".hard-north").attr("data-rotate", "");
         $(".hard-img").attr("src", '');
         $(".hard-img").closest('a').attr("href", '');
-        
+        console.log(img);
         $(".hard-floor").text(floor);
         $(".hard-apartment").text(apartment);
         $(".hard-ploshad").text(ploshad);
@@ -85,7 +83,7 @@ function popup() {
         $(".hard-otdelka").text(otdelka);
         $(".hard-north").attr("data-rotate", north);
         $(".hard-img").attr("src", img);
-        $(".hard-img").closest('a').attr("href", img);
+        $(".hard-img").closest('a').attr("hr    ef", img);
     });
 
     $(".callPopup-img").click(function() {

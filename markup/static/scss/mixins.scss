@@ -14,6 +14,17 @@
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     color: #8ACFC0;
+    @media not all and (min-resolution:.001dpcm) { 
+        @supports (-webkit-appearance:none) {
+            background: none !important;
+            -webkit-background-clip: none !important;
+            color: #8ACFC0 !important;
+            display: table;
+            -webkit-text-fill-color: #8ACFC0 !important;
+            margin: 20px auto;
+            -webkit-text-fill-color: #8ACFC0;
+        }
+    }
 }
 
 @mixin cf {

@@ -21,9 +21,16 @@ $(document).ready(function () {
                 iconImageSize: [22.45, 31], });    
             
                 myMap.geoObjects.add(myPlacemark);
+                $(".map__marker").click(function() {
+                    var x1 = +$(this).attr("data-x");
+                    var y1 = +$(this).attr("data-y");
+                    myMap.setCenter([x1,y1]);
+                });
             }
         );
+
     })
+
 
 });
 

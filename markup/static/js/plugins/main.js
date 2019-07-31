@@ -143,8 +143,12 @@ $(document).ready(function () {
 	$(".progress-item").mouseenter(function() {
 		var ref = $(this).index();
 		swiperback.slideTo(ref);
+		
 		$(".progress-item").removeClass('active');
 		$(this).addClass('active');
+		$(".progress__text-item").removeClass("active");
+		var ref1 = ref+1;
+		$(".progress__text-item:nth-child("+ref1+")").addClass("active")
 	});
 
 	$(".sidebar").each(function() {
@@ -180,21 +184,20 @@ $(document).ready(function () {
 			
 			var year		= +$('.calc-percent-year').text().replace(/\D+/g,""),
 			price	 	= +$('.calc-price').text().replace(/\D+/g,""),
-			vznos	 	= +$('.calc-vznos-result').text().replace(/\D+/g,""),
 			vznos_procent = $('.calc-vznos-prec').text().replace(/\D+/g,""),
 			time		= +$('.calc-time').text().replace(/\D+/g,"");
 			var vznosResult = price / 100 * vznos_procent;
 			var bezvznosa = price - vznosResult;
-			var monthPrice = bezvznosa / year * 12;
 			$(".calc-vznos-result").text(parseFloat(vznosResult).toFixed(0).replace(/(\d)(?=(\d\d\d)+([^\d]|$))/g, '$1 '));
 			var monthTime = time * 12;
 			$(".calc-credit-result").text(parseFloat(bezvznosa).toFixed(0).replace(/(\d)(?=(\d\d\d)+([^\d]|$))/g, '$1 ')  + " руб.");
-			var percentPerYear = +$(".calc-percent-year").text().replace(/\D+/g,"");
 			var monthResult = bezvznosa / monthTime;
 			procOstatok = 100 - year;
-			var summaProcent = bezvznosa / 100 * year;
-			var summaProcentMonth = summaProcent / 12;
-			$(".calc-result-month").text(parseFloat(monthResult).toFixed(0).replace(/(\d)(?=(\d\d\d)+([^\d]|$))/g, '$1 ') + " руб.");
+			console.log(year);
+            res1 = +(year)/12/100;
+            res2 = (+(price) - +(vznosResult))* res1/(1-1/Math.pow((1+res1), (+(monthTime))));
+            var resultCalc = res2.toFixed(0);
+			$(".calc-result-month").text(parseFloat(resultCalc).toFixed(0).replace(/(\d)(?=(\d\d\d)+([^\d]|$))/g, '$1 ') + " руб.");
 		});
 	})
 

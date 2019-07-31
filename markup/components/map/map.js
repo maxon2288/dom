@@ -26,6 +26,8 @@ $(document).ready(function () {
                     var x1 = +$(this).attr("data-x");
                     var y1 = +$(this).attr("data-y");
                     myMap.setCenter([x1,y1]);
+                    myPlacemark.geometry.setCoordinates([x1, y1]);
+
                 });
             }
         );

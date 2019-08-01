@@ -1,0 +1,54 @@
+<!doctype html>
+<html class="no-js" lang="ru">
+<head>
+    {{> head/head head.defaults}}
+</head>
+<body class="page" style="visibility: hidden;opacity: 0;">
+    %=symbols=%
+
+    {{> header/header}}
+
+    <div class="first">
+        <div class="first-leaf scene">
+            <img src="%=static=%img/content/leaf.png" data-depth="-2" alt="">
+        </div>
+        <div class="first__bg parallax" id="slider" data-type="background" data-speed="-2" style="background-image: url(%=static=%img/content/flex-bg.jpg)">
+        </div>
+        <div class="wrapper">
+            <div class="first__content">
+                {{> bread/bread}}
+                <div class="m-title wow fadeIn">Типовая</div>
+            </div>
+        </div>
+    </div>
+
+    <div class="type-block">
+        <div class="wrapper">
+            <div class="html">
+                <h1>lorem 1</h1>
+                <h2>lorem 2</h2>
+                <h3>lorem 3</h3>
+                <h4>lorem 4</h4>
+                <p>
+                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Quas, officia quaerat. Accusantium cumque ut quo, fugiat unde tempora iusto sit nesciunt sapiente veniam libero laboriosam porro dolores numquam eveniet est at sunt inventore nisi ex? Laborum aspernatur quas harum facilis expedita pariatur. Eveniet similique sequi excepturi nihil ipsam quae ratione iure facere cum quibusdam earum illo atque, nisi sapiente ullam. Atque ratione laboriosam quia cumque consequatur voluptatibus, a maiores officiis aut totam numquam soluta dolorum, nulla sit repellat assumenda voluptatum ea magnam quidem minus quod dolores. Nam sint aliquid harum, quibusdam quo delectus voluptates hic voluptatum labore voluptatem itaque maxime praesentium corporis porro enim perspiciatis a qui assumenda dolorem temporibus explicabo consequuntur magnam provident excepturi. Dolorum natus explicabo, nulla quod accusantium velit id quis quo ad mollitia minima veritatis, alias quam similique aliquam amet voluptatibus earum ut magni consequatur consequuntur corrupti, est hic. Architecto natus excepturi aperiam ex beatae amet porro soluta! Dicta sunt cumque quibusdam non hic voluptatibus, consectetur sequi debitis iste, nostrum officia minus modi commodi! Sint aliquam illo voluptas doloribus, vel aliquid nemo facere pariatur atque ipsa distinctio cum consectetur quos, esse officiis praesentium quod possimus, illum neque. Aperiam sint cum dolor repudiandae odio, praesentium nihil neque!
+                </p>
+                <p>
+                    Lorem <a href="#">ipsum</a> dolor sit amet <b>consectetur</b> adipisicing elit. Necessitatibus, labore?
+                </p>
+                <ul>
+                    <li>lorem</li>
+                    <li>lorem</li>
+                    <li>lorem</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+
+    
+    {{> footer/footer}}
+
+    
+    
+</body>
+</html>

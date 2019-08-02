@@ -144,11 +144,11 @@ $(document).ready(function () {
 		var ref = $(this).index();
 		swiperback.slideTo(ref);
 		
-		$(".progress-item").removeClass('active');
+		$(".progress-item-2").removeClass('active');
 		$(this).addClass('active');
-		$(".progress__text-item").removeClass("active");
+		$(".progress__text-2-item").removeClass("active");
 		var ref1 = ref+1;
-		$(".progress__text-item:nth-child("+ref1+")").addClass("active")
+		$(".progress__text-2-item:nth-child("+ref1+")").addClass("active")
 	});
 
 	$(".sidebar").each(function() {
@@ -180,8 +180,17 @@ $(document).ready(function () {
 			elem.closest('.range-container').find('.output-right').text(x.toFixed(0).replace(/(\d)(?=(\d\d\d)+([^\d]|$))/g, '$1 ' ));
 			elem.closest('.range-container').find('.output-right.calc-percent-year').text(x.toFixed(0).replace(/(\d)(?=(\d\d\d)+([^\d]|$))/g, '$1 ')+ "%");
 			elem.closest('.range-container').find('.output-right.calc-vznos-prec').text(x.toFixed(0).replace(/(\d)(?=(\d\d\d)+([^\d]|$))/g, '$1 ')+ "%");
-			elem.closest('.range-container').find('.output-right.calc-time').text(x.toFixed(0).replace(/(\d)(?=(\d\d\d)+([^\d]|$))/g, '$1 ')+ " лет");
-			
+			var lastNumber = +x.toFixed(0).replace(/(\d)(?=(\d\d\d)+([^\d]|$))/g, '$1 ').toString().split('').pop();
+			var number = +x.toFixed(0).replace(/(\d)(?=(\d\d\d)+([^\d]|$))/g, '$1 ');
+			if (lastNumber === 1) {
+				elem.closest('.range-container').find('.output-right.calc-time').text(x.toFixed(0).replace(/(\d)(?=(\d\d\d)+([^\d]|$))/g, '$1 ')+ " год");
+			}
+			if (lastNumber === 2| lastNumber === 3| lastNumber === 4) {
+				elem.closest('.range-container').find('.output-right.calc-time').text(x.toFixed(0).replace(/(\d)(?=(\d\d\d)+([^\d]|$))/g, '$1 ')+ " года");
+			}
+			if (lastNumber === 5|lastNumber === 6|lastNumber === 7|lastNumber === 8|lastNumber === 9|lastNumber === 0|number === 11|number === 12|number === 13|number === 14) {
+				elem.closest('.range-container').find('.output-right.calc-time').text(x.toFixed(0).replace(/(\d)(?=(\d\d\d)+([^\d]|$))/g, '$1 ')+ " лет");
+			}
 			var year		= +$('.calc-percent-year').text().replace(/\D+/g,""),
 			price	 	= +$('.calc-price').text().replace(/\D+/g,""),
 			vznos_procent = $('.calc-vznos-prec').text().replace(/\D+/g,""),
@@ -193,7 +202,6 @@ $(document).ready(function () {
 			$(".calc-credit-result").text(parseFloat(bezvznosa).toFixed(0).replace(/(\d)(?=(\d\d\d)+([^\d]|$))/g, '$1 ')  + " руб.");
 			var monthResult = bezvznosa / monthTime;
 			procOstatok = 100 - year;
-			console.log(year);
             res1 = +(year)/12/100;
             res2 = (+(price) - +(vznosResult))* res1/(1-1/Math.pow((1+res1), (+(monthTime))));
             var resultCalc = res2.toFixed(0);
